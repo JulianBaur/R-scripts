@@ -13,7 +13,8 @@ args <- commandArgs(trailingOnly = TRUE) # Use arguments
 
 infile <- args[1]
 outfile <- args[2]
-r_square <- if (try(typeof(args[3]) == "double")) {args[3]} else {0.85}
+r_square <- 0.85
+try(r_square <- as.double(args[3]))
 
 
 # descriptive matrices of p-values and correlation coefficients (after pearson)
