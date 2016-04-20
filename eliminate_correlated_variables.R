@@ -35,7 +35,7 @@ diag(correlation) <- NA                                             # replace di
 
 # so what you get is the triangle with coefficients in the lower half and according p-values in the upper half...
 
-print(correlation)
+# print(correlation)
 
 
 ### remove variables with correlations over given threshhold
@@ -46,7 +46,7 @@ print(correlation)
 highcorr <- findCorrelation(corrmatrix$r, cutoff=r_square, exact = TRUE)    # output is a vector of column numbers of correlated variables
 highcorr <- sort(highcorr)                                              # put them in order for removing them from the data set
 reduced_data <- data[,-c(highcorr)]                                     # save new data set only including the not too correlated variables
-print (reduced_data)
+# print (reduced_data)
 
-write.csv(reduced_data, file=outfile, row.names=TRUE, col.names=TRUE) # save your output
+write.csv(reduced_data, file=outfile, row.names=TRUE) # save your output
 
